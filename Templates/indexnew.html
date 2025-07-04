@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CKD Prediction - Input Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-predict.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h2>Chronic Kidney Disease Prediction</h2>
+        <p>Please fill in your medical details</p>
+    </div>
+
+    <form action="/predict" method="POST">
+
+        <!-- 1. specific_gravity -->
+        <label>Specific Gravity:</label><br>
+        <select name="specific_gravity" required>
+            <option value="1.005">1.005</option>
+            <option value="1.010">1.010</option>
+            <option value="1.015">1.015</option>
+            <option value="1.020">1.020</option>
+            <option value="1.025">1.025</option>
+        </select><br>
+
+        <!-- 2. albumin -->
+        <label>Albumin:</label><br>
+        <select name="albumin" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br>
+
+        <!-- 3. blood_glucose_random -->
+        <label>Blood Glucose Random (mg/dL):</label><br>
+        <input type="text" name="blood_glucose_random" placeholder="Numeric value" required><br>
+
+        <!-- 4. serum_creatinine -->
+        <label>Serum Creatinine (mg/dL):</label><br>
+        <input type="text" name="serum_creatinine" placeholder="Numeric value" required><br>
+
+        <!-- 5. haemoglobin -->
+        <label>Haemoglobin (g/dL):</label><br>
+        <input type="text" name="haemoglobin" placeholder="Numeric value" required><br>
+
+        <!-- 6. packed_cell_volume -->
+        <label>Packed Cell Volume (%):</label><br>
+        <input type="text" name="packed_cell_volume" placeholder="Numeric value" required><br>
+
+        <!-- 7. red_blood_cell_count -->
+        <label>Red Blood Cell Count (millions/cumm):</label><br>
+        <input type="text" name="red_blood_cell_count" placeholder="Numeric value" required><br>
+
+        <!-- 8. hypertension -->
+        <label>Hypertension:</label><br>
+        <select name="hypertension" required>
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+        </select><br>
+
+        <br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
